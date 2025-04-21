@@ -2,7 +2,7 @@
 title: Homework 8 - World Bank Analysis
 ---
 
-GITHUB URL:  <https://github.com/cmsc-vcu/cmsc408-sp2025-hw8-jleonard99>
+GITHUB URL:  <https://github.com/cmsc-vcu/cmsc408-sp2025-hw8-rganesh03>
 
 
 # Problem Background
@@ -91,7 +91,9 @@ List all non-countries.
 ## (skills: select, where)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select *
+from world_bank_data.wdi_country
+where Region is null
 """)
 ```
 
@@ -116,13 +118,18 @@ drop table if exists wdi_country;
 ```{python}
 # create table
 execute_ddl(cnx,"""
+create table sp25_ganeshr_user.wdi_country as
+select *
+from world_bank_data.wdi_country
+where region is not null
 """)
 ```
 
 ```{python}
 # show number of records
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select count(*) as "Number of Records"
+from sp25_ganeshr_user.wdi_country
 """)
 ```
 
@@ -134,7 +141,8 @@ According to the World Bank, in 2020 there were how many countries in the world?
 ## (skills: select, aggregate)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select count(*) as "Number of Countries"
+from sp25_ganeshr_user.wdi_country
 """)
 
 ```
@@ -151,7 +159,8 @@ What are all unique values of region in the wdi_country table?
 ## (skills: select, aggregate, order by)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select distinct region
+from sp25_ganeshr_user.wdi_country
 """)
 
 ```
@@ -165,7 +174,10 @@ How many countries are in each region?
 ## (skills: select, aggregate, group by, order by)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select region,
+count(*) as "Number of Countries"
+from sp25_ganeshr_user.wdi_country
+group by region;
 """)
 
 ```
@@ -179,7 +191,9 @@ List the country full names and regions for all countries in north america.
 ## (skills: select, where, order by)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select `Long Name`, region
+from sp25_ganeshr_user.wdi_country
+where region = 'North America';
 """)
 
 ```
@@ -192,7 +206,9 @@ select "doh!" as "Homer says ..." from dual
 ## (skills: select, where)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select region, `short name`, `long name`
+from sp25_ganeshr_user.wdi_country
+where `Table Name` = 'qatar'
 """)
 
 ```
@@ -206,7 +222,9 @@ select "doh!" as "Homer says ..." from dual
 ## (skills: select, where, order by)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select `country code`, `short name`, `2-alpha code`, `WB-2 code`, region
+from sp25_ganeshr_user.wdi_country
+where `2-alpha code` != `WB-2 code`
 """)
 
 ```
@@ -220,7 +238,11 @@ select "doh!" as "Homer says ..." from dual
 ## (skills: select, aggregate, group by, order by)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select `income group`,
+count(*) as "Number of Countries"
+from sp25_ganeshr_user.wdi_country
+group by `income group`
+order by "Number of Countries" desc
 """)
 
 ```
@@ -235,29 +257,36 @@ select "doh!" as "Homer says ..." from dual
 ## in the first column.
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select `short name`, `long name`, region, `income group`
+from sp25_ganeshr_user.wdi_country
+where `income group` is null
 """)
 
 ```
 
 ## Task 13
-
 ```{python}
 ## OK, this HAS to be an error. Let's make a assumption that the country 
 ## in question, because they are oil-rich, are "high income".  
 ## Write an update comment to correct the issue.
 ## NOTE - if you get this wrong, all subsequent tables will be wrong!
 
+
 execute_ddl(cnx,"""
+update sp25_ganeshr_user.wdi_country
+set `income group` = "High income"
+where `country code` = "VEN";
+commit;
 """)
-
-
 ```
+
 ```{python}
 ## Now, display the country again to verify the change stuck!
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select `short name`, `long name`, region, `income group`
+from sp25_ganeshr_user.wdi_country
+where `country code` = "VEN"
 """)
 
 ```
@@ -271,7 +300,10 @@ select "doh!" as "Homer says ..." from dual
 ## (skills: select, aggregate, group by, order by)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select region, `income group`,
+count(*) as "Number of Countries"
+from sp25_ganeshr_user.wdi_country
+group by region, `income group`
 """)
 
 ```
@@ -292,7 +324,15 @@ select "doh!" as "Homer says ..." from dual
 ## (skills: select, aggregate, group by, nested query)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select 
+    region,
+    sum(case when `income group` = 'high income' then 1 else 0 end) as "High income",
+    sum(case when `income group` = 'upper middle income' then 1 else 0 end) as "Upper middle income",
+    sum(case when `income group` = 'lower middle income' then 1 else 0 end) as "Lower middle income",
+    sum(case when `income group` = 'low income' then 1 else 0 end) as "low income"
+from sp25_ganeshr_user.wdi_country
+group by region
+order by region;
 """)
 
 ```
@@ -312,7 +352,13 @@ select "doh!" as "Homer says ..." from dual
 ## (skills: select, aggregate, group by, nested query, order by, limit)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select
+count(*) as "Number of Countries", region
+from sp25_ganeshr_user.wdi_country
+where `income group` = "Low income"
+group by region
+order by count(*) DESC
+limit 1;
 """)
 
 ```
@@ -329,7 +375,14 @@ select "doh!" as "Homer says ..." from dual
 ## (skills: select, where, subquery)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select `country code`, `short name`, region, `income group`
+from sp25_ganeshr_user.wdi_country
+where `income group` in (
+select `income group`
+from wdi_country
+where `country code` = "MHL" 
+)
+order by `short name`
 """)
 
 ```
@@ -354,7 +407,23 @@ select "doh!" as "Homer says ..." from dual
 ## (skills: select, where, subqueries, joins)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select region, `income group`,
+       count(*) as "Country Count",
+       (select count(region) 
+        from wdi_country as reg 
+        where reg.region = wdi_country.region) as "Countries in Region",
+       (select count(`income group`) 
+        from wdi_country as inc 
+        where inc.`income group` = wdi_country.`income group`) as "Countries in Income Group",
+       (select count(*) 
+        from wdi_country) as "Total Countries",
+       ((select count(`income group`) 
+         from wdi_country as inc 
+         where inc.`income group` = wdi_country.`income group`) /
+        (select count(*) 
+         from wdi_country) * 100) as "Percentage of Region"
+from wdi_country
+group by region, `income group`;
 """)
 
 ```
@@ -378,10 +447,25 @@ select "doh!" as "Homer says ..." from dual
 ## (skills: select, where, subqueries, joins, aggregate functions)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select 
+    region, 
+    `income group`,
+    count(*) as "Country Count", 
+    (select count(*) 
+     from wdi_country as reg 
+     where reg.region = wdi_country.region) as "Countries in Region", 
+    (select count(*) 
+     from wdi_country as inc 
+     where inc.`income group` = wdi_country.`income group`) as "Countries in Income Group", 
+    (select count(*) 
+     from wdi_country) as "Total Countries", 
+    (count(*) * 100.0 / 
+     (select count(*) 
+      from wdi_country as reg 
+      where reg.region = wdi_country.region)) as "Percent of Region-Income Group" 
+from wdi_country
+group by region, `income group`;
 """)
-
-
 ```
 
 ## Task 20
@@ -392,7 +476,16 @@ select "doh!" as "Homer says ..." from dual
 ## columns, Region in the rows and Percent of total in each cell of the table.
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select 
+    region,
+    (sum(case when `income group` = 'high income' then 1 else 0 end) / count(*)) * 100 as "High income",
+    (sum(case when `income group` = 'upper middle income' then 1 else 0 end) / count(*)) * 100 as "Upper middle income",
+    (sum(case when `income group` = 'lower middle income' then 1 else 0 end) / count(*)) * 100 as "Lower middle income",
+    (sum(case when `income group` = 'low income' then 1 else 0 end) / count(*)) * 100 as "Low income"
+from sp25_ganeshr_user.wdi_country
+group by region
+order by region;
+
 """)
 
 ```
@@ -407,7 +500,20 @@ select "doh!" as "Homer says ..." from dual
 ## (This is much simpler than task 20!)
 
 run_sql_and_return_html(cnx,"""
-select "doh!" as "Homer says ..." from dual
+select 
+    `income group`, 
+    (select count(*) 
+     from wdi_country as inc 
+     where inc.`income group` = wdi_country.`income group`) as "Countries in Income Group", 
+    (select count(*) 
+     from wdi_country) as "Total Countries", 
+    ((select count(*) 
+      from wdi_country as inc 
+      where inc.`income group` = wdi_country.`income group`) 
+      / (select count(*) 
+         from wdi_country) * 100) as "Percent of Total"
+from wdi_country
+group by `income group`;
 """)
 
 ```
@@ -417,16 +523,16 @@ select "doh!" as "Homer says ..." from dual
 
 1. Reflect on the SQL skills you used throughout these exercises. Which skills do you feel most confident in, and which do you think need more practice? How has this assignment helped you build or reinforce specific SQL competencies?
 
-( response goes here)
+: I feel most confident in my abilities to logically answer these queries and ask the right query. However, my biggest weakness is actually implementing the query. Often enough, many of the most time-consuming parts were trying to my formatting and query syntax correct. I feel that I was pretty fast in getting the solution, but slow in figuring out why the code wasn't running or what erros I made in sql. I often had to search up the way to format specific keywords and why certain errors would pop up. Overall, I would need more practice in actual doing these queries, though this was really good practice and I'm sure that, given a similar assignment, I could do it twice as fast. This assignment helped me learn the formatting for SQL queries and ensuring that I still remember and know what queries to do and how to use them.
 
 2. Problem-Solving Approach: Describe your approach to tackling the more complex tasks (like Tasks 18, 23, and 24). How did you break down these problems, and what steps did you take when you encountered challenges? How would you approach a similar problem differently in the future?
 
-( response goes here)
+: When dealing with some of the more complicated tasks, if I didn't have an immediate answer, my first instinct was to go to the slides from class and see if we covered similar topics. If that didn't work and there were some errors with the code I was writing but I had an idea of what to do, I would search up the queries and learn the context in which to use them and how to get what I want from them. Overall, I just try to learn more about the queries until I understand them. In the future, If I were to change how I'd approach these problems, I would probably start with learning more if I am unsure and then once I am more familiar with the context and the problem, I would start the problem with more confidence.
 
 
 3. Learning Takeaways: Consider the overall learning experience from this assignment. What were the biggest takeaways about working with SQL for data analysis and transformation? How do you think these skills will apply in real-world scenarios or future coursework?
 
-( response goes here)
+: The biggest takeaway for me during this assignment was that SQL is a very simple language but can be used in many ways to create much more complex results and queries. In the real-world, this is very useful because data is everywhere in our lives. Knowing SQL is a very big advanatge in the modern industry because no matter where you go, SQL is used. I personally am interested in space and there is so much data in space which is definitely stored in databases. In future coursework, I don't know how useful this will be, but I know that the senior design project could involve databases so SQL could be useful there.
 
 
 # README
