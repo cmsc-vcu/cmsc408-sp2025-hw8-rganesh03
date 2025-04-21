@@ -3155,7 +3155,7 @@ vertical-align: -.125em;
 <p>GITHUB URL: <a href="https://github.com/cmsc-vcu/cmsc408-sp2025-hw8-rganesh03" class="uri">https://github.com/cmsc-vcu/cmsc408-sp2025-hw8-rganesh03</a></p>
 <section id="problem-background" class="level1">
 <h1>Problem Background</h1>
-<div id="345a0720" class="cell" data-execution_count="1">
+<div id="f4293cb8" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> helpers <span class="im">import</span> create_database_engine, run_sql_and_return_df, run_sql_and_return_html, create_db_wrapper, execute_ddl_from_file, execute_ddl</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Load these variables from .env file.</span></span>
@@ -3168,7 +3168,7 @@ vertical-align: -.125em;
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>cnx,config <span class="op">=</span> create_db_wrapper( config_map )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="18746705" class="cell" data-execution_count="2">
+<div id="934ccb60" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Do a quick test of the connection and trap the errors better!</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
@@ -3269,7 +3269,7 @@ Total Rows: 3, Total Columns: 3
 <section id="task-1" class="level2">
 <h2 class="anchored" data-anchor-id="task-1">Task 1</h2>
 <p>How many records are in the country table?</p>
-<div id="10b50a51" class="cell" data-execution_count="3">
+<div id="4cf68859" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How many records are in the world_bank_data.wdi_country table?</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># (skills: select, aggregate)</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -3318,7 +3318,7 @@ Total Rows: 1, Total Columns: 1
 <section id="task-2" class="level2">
 <h2 class="anchored" data-anchor-id="task-2">Task 2</h2>
 <p>Explore the first 5 records in the country table.</p>
-<div id="a7748099" class="cell" data-execution_count="4">
+<div id="6184036f" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## write out the first 10 records and look at the columns</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Do you see any blanks or missing data?</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, limit)</span></span>
@@ -4121,7 +4121,7 @@ Total Rows: 5, Total Columns: 31
 <section id="task-3" class="level2">
 <h2 class="anchored" data-anchor-id="task-3">Task 3</h2>
 <p>List all non-countries.</p>
-<div id="4624e84f" class="cell" data-execution_count="5">
+<div id="6385fc73" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">## task 3</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co">## Which records are NOT for countries, that is they&#39;re for regions or groups of countries.</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co">## How can you tell?</span></span>
@@ -4129,7 +4129,7 @@ Total Rows: 5, Total Columns: 31
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, where)</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">select *</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="st">select `long name`</span></span>
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="st">from world_bank_data.wdi_country</span></span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="st">where Region is null</span></span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -4141,127 +4141,7 @@ Total Rows: 5, Total Columns: 31
 <tr>
 
 <th>
-Country Code
-</th>
-
-<th>
-Short Name
-</th>
-
-<th>
-Table Name
-</th>
-
-<th>
-Long Name
-</th>
-
-<th>
-2-alpha code
-</th>
-
-<th>
-Currency Unit
-</th>
-
-<th>
-Special Notes
-</th>
-
-<th>
-Region
-</th>
-
-<th>
-Income Group
-</th>
-
-<th>
-WB-2 code
-</th>
-
-<th>
-National accounts base year
-</th>
-
-<th>
-National accounts reference year
-</th>
-
-<th>
-SNA price valuation
-</th>
-
-<th>
-Lending category
-</th>
-
-<th>
-Other groups
-</th>
-
-<th>
-System of National Accounts
-</th>
-
-<th>
-Alternative conversion factor
-</th>
-
-<th>
-PPP survey year
-</th>
-
-<th>
-Balance of Payments Manual in use
-</th>
-
-<th>
-External debt Reporting status
-</th>
-
-<th>
-System of trade
-</th>
-
-<th>
-Government Accounting concept
-</th>
-
-<th>
-IMF data dissemination standard
-</th>
-
-<th>
-Latest population census
-</th>
-
-<th>
-Latest household survey
-</th>
-
-<th>
-Source of most recent Income and expenditure data
-</th>
-
-<th>
-Vital registration complete
-</th>
-
-<th>
-Latest agricultural census
-</th>
-
-<th>
-Latest industrial data
-</th>
-
-<th>
-Latest trade data
-</th>
-
-<th>
-Latest water withdrawal data
+long name
 </th>
 
 </tr>
@@ -4273,5887 +4153,375 @@ Latest water withdrawal data
 <tr>
 
 <td>
-AFE
-</td>
-
-<td>
 Africa Eastern and Southern
-</td>
-
-<td>
-Africa Eastern and Southern
-</td>
-
-<td>
-Africa Eastern and Southern
-</td>
-
-<td>
-ZH
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-26 countries, stretching from the Red Sea in the North to the Cape of Good Hope in the South (https://www.worldbank.org/en/region/afr/eastern-and-southern-africa)
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-ZH
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
 </td>
 
 </tr>
 
 <tr>
-
-<td>
-AFW
-</td>
 
 <td>
 Africa Western and Central
 </td>
 
-<td>
-Africa Western and Central
-</td>
-
-<td>
-Africa Western and Central
-</td>
-
-<td>
-ZI
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-22 countries, stretching from the westernmost point of Africa, across the equator, and partly along the Atlantic Ocean till the Republic of Congo in the South (https://www.worldbank.org/en/region/afr/western-and-central-africa)
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-ZI
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-ARB
-</td>
 
 <td>
 Arab World
 </td>
 
-<td>
-Arab World
-</td>
-
-<td>
-Arab World
-</td>
-
-<td>
-1A
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Arab World aggregate. Arab World is composed of members of the League of Arab States.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-1A
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-CEB
-</td>
 
 <td>
 Central Europe and the Baltics
 </td>
 
-<td>
-Central Europe and the Baltics
-</td>
-
-<td>
-Central Europe and the Baltics
-</td>
-
-<td>
-B8
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Central Europe and the Baltics aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-B8
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-CSS
-</td>
 
 <td>
 Caribbean small states
 </td>
 
-<td>
-Caribbean small states
-</td>
-
-<td>
-Caribbean small states
-</td>
-
-<td>
-S3
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Caribbean small states aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-S3
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-EAP
-</td>
 
 <td>
 East Asia &amp; Pacific (excluding high income)
 </td>
 
-<td>
-East Asia &amp; Pacific (excluding high income)
-</td>
-
-<td>
-East Asia &amp; Pacific (excluding high income)
-</td>
-
-<td>
-4E
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-4E
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-EAR
-</td>
 
 <td>
 Early-demographic dividend
 </td>
 
-<td>
-Early-demographic dividend
-</td>
-
-<td>
-Early-demographic dividend
-</td>
-
-<td>
-V2
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Early-dividend countries are mostly lower-middle-income countries further along the fertility transition. Fertility rates have fallen below four births per woman and the working-age share of the population is likely rising considerably.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-V2
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-EAS
-</td>
 
 <td>
 East Asia &amp; Pacific
 </td>
 
-<td>
-East Asia &amp; Pacific
-</td>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-<td>
-Z4
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-East Asia and Pacific regional aggregate (includes all income levels).
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Z4
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-ECA
-</td>
 
 <td>
 Europe &amp; Central Asia (excluding high income)
 </td>
 
-<td>
-Europe &amp; Central Asia (excluding high income)
-</td>
-
-<td>
-Europe &amp; Central Asia (excluding high income)
-</td>
-
-<td>
-7E
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-7E
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-ECS
-</td>
 
 <td>
 Europe &amp; Central Asia
 </td>
 
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Z7
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Europe and Central Asia regional aggregate (includes all income levels).
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Z7
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-EMU
-</td>
 
 <td>
 Euro area
 </td>
 
-<td>
-Euro area
-</td>
-
-<td>
-Euro area
-</td>
-
-<td>
-XC
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Euro area aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XC
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-BPM6
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Special Data Dissemination Standard (SDDS)
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-EUU
-</td>
 
 <td>
 European Union
 </td>
 
-<td>
-European Union
-</td>
-
-<td>
-European Union
-</td>
-
-<td>
-EU
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-European Union aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-EU
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-FCS
-</td>
 
 <td>
 Fragile and conflict affected situations
 </td>
 
-<td>
-Fragile and conflict affected situations
-</td>
-
-<td>
-Fragile and conflict affected situations
-</td>
-
-<td>
-F1
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Countries are distinguished based on the nature and severity of issues they face. The classification uses the following categories: - Countries with high levels of institutional and social fragility, identified based on publicly available indicators that measure the quality of policy and institutions and manifestations of fragility. - Countries affected by violent conflict, identified based on a threshold number of conflict-related deaths relative to the population. This category includes two sub-categories based on the intensity of violence: countries in high-intensity conflict and countries in medium-intensity conflict. For more information, please visit https://www.worldbank.org/en/topic/fragilityconflictviolence/brief/harmonized-list-of-fragile-situations.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-F1
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-HIC
-</td>
 
 <td>
 High income
 </td>
 
-<td>
-High income
-</td>
-
-<td>
-High income
-</td>
-
-<td>
-XD
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-High income group aggregate. High-income economies are those in which 2023 Atlas GNI per capita was more than $14,005.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XD
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-HPC
-</td>
 
 <td>
 Heavily indebted poor countries (HIPC)
 </td>
 
-<td>
-Heavily indebted poor countries (HIPC)
-</td>
-
-<td>
-Heavily indebted poor countries (HIPC)
-</td>
-
-<td>
-XE
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-The Heavily Indebted Poor Countries (HIPC) refer to countries that participated in the HIPC Initiative, launched in 1996 by the IMF and World Bank to reduce external debt burdens of the most heavily indebted poor countries at that time to sustainable levels. To date, the majority of the countries completed the program, receiving 76 billion in debt-service relief over time. For more details, visit https://www.imf.org/en/About/Factsheets/Sheets/2016/08/01/16/11/Debt-Relief-Under-the-Heavily-Indebted-Poor-Countries-Initiative.\nData are aggregates for HIPC.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XE
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-IBD
-</td>
 
 <td>
 IBRD only
 </td>
 
-<td>
-IBRD only
-</td>
-
-<td>
-IBRD only
-</td>
-
-<td>
-XF
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-IBRD only group aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XF
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-IBT
-</td>
 
 <td>
 IDA &amp; IBRD total
 </td>
 
-<td>
-IDA &amp; IBRD total
-</td>
-
-<td>
-IDA &amp; IBRD total
-</td>
-
-<td>
-ZT
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-IDA and IBRD total group aggregate (includes IDA only, IDA blend, and IBRD only).
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-ZT
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-IDA
-</td>
 
 <td>
 IDA total
 </td>
 
-<td>
-IDA total
-</td>
-
-<td>
-IDA total
-</td>
-
-<td>
-XG
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-IDA total group aggregate (includes IDA only and IDA blend).
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XG
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-IDB
-</td>
 
 <td>
 IDA blend
 </td>
 
-<td>
-IDA blend
-</td>
-
-<td>
-IDA blend
-</td>
-
-<td>
-XH
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-IDA blend group aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XH
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-IDX
-</td>
 
 <td>
 IDA only
 </td>
 
-<td>
-IDA only
-</td>
-
-<td>
-IDA only
-</td>
-
-<td>
-XI
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-IDA only group aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XI
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-LAC
-</td>
 
 <td>
 Latin America &amp; Caribbean (excluding high income)
 </td>
 
-<td>
-Latin America &amp; Caribbean (excluding high income)
-</td>
-
-<td>
-Latin America &amp; Caribbean (excluding high income)
-</td>
-
-<td>
-XJ
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XJ
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-LCN
-</td>
 
 <td>
 Latin America &amp; Caribbean
 </td>
 
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-ZJ
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-ZJ
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-LDC
-</td>
 
 <td>
 Least developed countries: UN classification
 </td>
 
-<td>
-Least developed countries: UN classification
-</td>
-
-<td>
-Least developed countries: UN classification
-</td>
-
-<td>
-XL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-LIC
-</td>
 
 <td>
 Low income
 </td>
 
-<td>
-Low income
-</td>
-
-<td>
-Low income
-</td>
-
-<td>
-XM
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Low income group aggregate. Low-income economies are those in which 2023 Atlas GNI per capita was $1,145 or less.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XM
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-LMC
-</td>
 
 <td>
 Lower middle income
 </td>
 
-<td>
-Lower middle income
-</td>
-
-<td>
-Lower middle income
-</td>
-
-<td>
-XN
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Lower middle income group aggregate. Lower-middle-income economies are those in which Atlas 2023 GNI per capita was between $1,146 and $4,515.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XN
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-LMY
-</td>
 
 <td>
 Low &amp; middle income
 </td>
 
-<td>
-Low &amp; middle income
-</td>
-
-<td>
-Low &amp; middle income
-</td>
-
-<td>
-XO
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Low and middle-income group aggregate. Low and middle-income economies are those in which Atlas 2023 GNI per capita was less than $14,005.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XO
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-LTE
-</td>
 
 <td>
 Late-demographic dividend
 </td>
 
-<td>
-Late-demographic dividend
-</td>
-
-<td>
-Late-demographic dividend
-</td>
-
-<td>
-V3
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Late-dividend countries are mostly upper middle-income countries. Fertility rates are typically above replacement levels of 2.1 births per woman but continue to decline with shrinking working-age shares and rapid aging.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-V3
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-MEA
-</td>
 
 <td>
 Middle East &amp; North Africa
 </td>
 
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-ZQ
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Middle East and North Africa regional aggregate (includes all income levels).
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-ZQ
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-MIC
-</td>
 
 <td>
 Middle income
 </td>
 
-<td>
-Middle income
-</td>
-
-<td>
-Middle income
-</td>
-
-<td>
-XP
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Middle income group aggregate. Middle-income economies are those in which 2023 Atlas GNI per capita was between $1,146 and $14,005.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XP
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-MNA
-</td>
 
 <td>
 Middle East &amp; North Africa (excluding high income)
 </td>
 
-<td>
-Middle East &amp; North Africa (excluding high income)
-</td>
-
-<td>
-Middle East &amp; North Africa (excluding high income)
-</td>
-
-<td>
-XQ
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XQ
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-NAC
-</td>
 
 <td>
 North America
 </td>
 
-<td>
-North America
-</td>
-
-<td>
-North America
-</td>
-
-<td>
-XU
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-North America regional aggregate. There are no economies in North America classified as low or middle income.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XU
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-OED
-</td>
 
 <td>
 OECD members
 </td>
 
-<td>
-OECD members
-</td>
-
-<td>
-OECD members
-</td>
-
-<td>
-OE
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-OE
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-OSS
-</td>
 
 <td>
 Other small states
 </td>
 
-<td>
-Other small states
-</td>
-
-<td>
-Other small states
-</td>
-
-<td>
-S4
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Other small states aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-S4
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-PRE
-</td>
 
 <td>
 Pre-demographic dividend
 </td>
 
-<td>
-Pre-demographic dividend
-</td>
-
-<td>
-Pre-demographic dividend
-</td>
-
-<td>
-V1
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Pre-dividend countries are mostly low-income countries, lagging in key human development indicators and with current fertility levels above four births per woman. They face very rapid population growth.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-V1
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-PSS
-</td>
 
 <td>
 Pacific island small states
 </td>
 
-<td>
-Pacific island small states
-</td>
-
-<td>
-Pacific island small states
-</td>
-
-<td>
-S2
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Pacific island small states aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-S2
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-PST
-</td>
 
 <td>
 Post-demographic dividend
 </td>
 
-<td>
-Post-demographic dividend
-</td>
-
-<td>
-Post-demographic dividend
-</td>
-
-<td>
-V4
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Post-dividend countries are mostly high-income countries where fertility has transitioned below replacement levels.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-V4
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-SAS
-</td>
 
 <td>
 South Asia
 </td>
 
-<td>
-South Asia
-</td>
-
-<td>
-South Asia
-</td>
-
-<td>
-8S
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-8S
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-SSA
-</td>
 
 <td>
 Sub-Saharan Africa (excluding high income)
 </td>
 
-<td>
-Sub-Saharan Africa (excluding high income)
-</td>
-
-<td>
-Sub-Saharan Africa (excluding high income)
-</td>
-
-<td>
-ZF
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-ZF
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-SSF
-</td>
 
 <td>
 Sub-Saharan Africa
 </td>
 
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-ZG
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Sub-Saharan Africa regional aggregate (includes all income levels).
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-ZG
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-SST
-</td>
 
 <td>
 Small states
 </td>
 
-<td>
-Small states
-</td>
-
-<td>
-Small states
-</td>
-
-<td>
-S1
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Small states aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-S1
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-TEA
-</td>
 
 <td>
 East Asia &amp; Pacific (IDA &amp; IBRD)
 </td>
 
-<td>
-East Asia &amp; Pacific (IDA &amp; IBRD)
-</td>
-
-<td>
-East Asia &amp; Pacific (IDA &amp; IBRD)
-</td>
-
-<td>
-T4
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-East Asia &amp; Pacific (IDA &amp; IBRD countries) aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-T4
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-TEC
-</td>
 
 <td>
 Europe &amp; Central Asia (IDA &amp; IBRD)
 </td>
 
-<td>
-Europe &amp; Central Asia (IDA &amp; IBRD)
-</td>
-
-<td>
-Europe &amp; Central Asia (IDA &amp; IBRD)
-</td>
-
-<td>
-T7
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Europe &amp; Central Asia (IDA &amp; IBRD countries) aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-T7
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-TLA
-</td>
 
 <td>
 Latin America &amp; Caribbean (IDA &amp; IBRD)
 </td>
 
-<td>
-Latin America &amp; Caribbean (IDA &amp; IBRD)
-</td>
-
-<td>
-Latin America &amp; Caribbean (IDA &amp; IBRD)
-</td>
-
-<td>
-T2
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Latin America &amp; the Caribbean (IDA &amp; IBRD countries) aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-T2
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-TMN
-</td>
 
 <td>
 Middle East &amp; North Africa (IDA &amp; IBRD)
 </td>
 
-<td>
-Middle East &amp; North Africa (IDA &amp; IBRD)
-</td>
-
-<td>
-Middle East &amp; North Africa (IDA &amp; IBRD)
-</td>
-
-<td>
-T3
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Middle East &amp; North Africa (IDA &amp; IBRD countries) aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-T3
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-TSA
-</td>
 
 <td>
 South Asia (IDA &amp; IBRD)
 </td>
 
-<td>
-South Asia (IDA &amp; IBRD)
-</td>
-
-<td>
-South Asia (IDA &amp; IBRD)
-</td>
-
-<td>
-T5
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-South Asia (IDA &amp; IBRD countries) aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-T5
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
 </tr>
 
 <tr>
-
-<td>
-TSS
-</td>
 
 <td>
 Sub-Saharan Africa (IDA &amp; IBRD)
 </td>
 
-<td>
-Sub-Saharan Africa (IDA &amp; IBRD)
-</td>
+</tr>
+
+<tr>
 
 <td>
-Sub-Saharan Africa (IDA &amp; IBRD)
-</td>
-
-<td>
-T6
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Sub-Saharan Africa (IDA &amp; IBRD countries) aggregate.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-T6
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
+Upper middle income
 </td>
 
 </tr>
@@ -10161,262 +4529,14 @@ NULL
 <tr>
 
 <td>
-UMC
-</td>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-XT
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-Upper middle income group aggregate. Upper-middle-income economies are those in which 2023 Atlas GNI per capita was between $4,516 and $14,005.
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-XT
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
+World
 </td>
 
 </tr>
 
 <tr>
-
-<td>
-WLD
-</td>
-
-<td>
-World
-</td>
-
-<td>
-World
-</td>
-
-<td>
-World
-</td>
-
-<td>
-1W
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-1W
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-<td>
-NULL
-</td>
-
-</tr>
-
-<tr>
-<td colspan="31" style="text-align: left;">
-Total Rows: 48, Total Columns: 31
+<td colspan="1" style="text-align: left;">
+Total Rows: 48, Total Columns: 1
 </td>
 </tr>
 </tbody>
@@ -10428,7 +4548,7 @@ Total Rows: 48, Total Columns: 31
 <section id="task-4" class="level2">
 <h2 class="anchored" data-anchor-id="task-4">Task 4</h2>
 <p>Create your own copy of WDI_Country containing just countries.</p>
-<div id="a4b63d0a" class="cell" data-execution_count="6">
+<div id="c2dd4479" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">## task 4</span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co">## The WDI table clearly contains information for countries and non-countries</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co">## using CREATE TABLE ... SELECT from WHERE syntax.</span></span>
@@ -10441,7 +4561,7 @@ Total Rows: 48, Total Columns: 31
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="st">drop table if exists wdi_country;</span></span>
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="cd2c1a3e" class="cell" data-execution_count="7">
+<div id="bbf6f6c3" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create table</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>execute_ddl(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="st">create table sp25_ganeshr_user.wdi_country as</span></span>
@@ -10450,7 +4570,7 @@ Total Rows: 48, Total Columns: 31
 <span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="st">where region is not null</span></span>
 <span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="78407c8c" class="cell" data-execution_count="8">
+<div id="937e6c5a" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># show number of records</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">select count(*) as &quot;Number of Records&quot;</span></span>
@@ -10495,7 +4615,7 @@ Total Rows: 1, Total Columns: 1
 <section id="task-5" class="level2">
 <h2 class="anchored" data-anchor-id="task-5">Task 5</h2>
 <p>According to the World Bank, in 2020 there were how many countries in the world?</p>
-<div id="1c4422f0" class="cell" data-execution_count="9">
+<div id="d36ffe23" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, aggregate)</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
@@ -10541,7 +4661,7 @@ Total Rows: 1, Total Columns: 1
 <section id="task-6" class="level2">
 <h2 class="anchored" data-anchor-id="task-6">Task 6</h2>
 <p>What are all unique values of region in the wdi_country table?</p>
-<div id="3625e2e0" class="cell" data-execution_count="10">
+<div id="beadc1d8" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Let&#39;s investigate the country_region field.</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co">## What is the domain of the country_region field? That is,</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="co">## what are the unique values found there?</span></span>
@@ -10639,7 +4759,7 @@ Total Rows: 7, Total Columns: 1
 <section id="task-7" class="level2">
 <h2 class="anchored" data-anchor-id="task-7">Task 7</h2>
 <p>How many countries are in each region?</p>
-<div id="f2516847" class="cell" data-execution_count="11">
+<div id="e97fe00b" class="cell" data-execution_count="11">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">## How many countries are in each region?</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, aggregate, group by, order by)</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -10768,7 +4888,7 @@ Total Rows: 7, Total Columns: 2
 <section id="task-8" class="level2">
 <h2 class="anchored" data-anchor-id="task-8">Task 8</h2>
 <p>List the country full names and regions for all countries in north america.</p>
-<div id="37b720b7" class="cell" data-execution_count="12">
+<div id="e106835d" class="cell" data-execution_count="12">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">## List the country full names and regions for all countries in north america</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, where, order by)</span></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -10847,7 +4967,7 @@ Total Rows: 3, Total Columns: 2
 </section>
 <section id="task-9" class="level2">
 <h2 class="anchored" data-anchor-id="task-9">Task 9</h2>
-<div id="4819ffd6" class="cell" data-execution_count="13">
+<div id="29570553" class="cell" data-execution_count="13">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co">## The last World Cup soccer tournament was hosted by Qatar.</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co">## What region contains Qatar?  List the region, country short name and full name</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, where)</span></span>
@@ -10911,7 +5031,7 @@ Total Rows: 1, Total Columns: 3
 </section>
 <section id="task-10" class="level2">
 <h2 class="anchored" data-anchor-id="task-10">Task 10</h2>
-<div id="a618ae28" class="cell" data-execution_count="14">
+<div id="0890cb2d" class="cell" data-execution_count="14">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">## There are two abbreviation fields in the data country_abbr and country_wb_abbr.</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="co">## List the country code, short name, abbr, wb_abbr and region for all the countries</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="co">## where the abbr and wb_abbr are different.</span></span>
@@ -11088,7 +5208,7 @@ Total Rows: 5, Total Columns: 5
 </section>
 <section id="task-11" class="level2">
 <h2 class="anchored" data-anchor-id="task-11">Task 11</h2>
-<div id="944be5c6" class="cell" data-execution_count="15">
+<div id="009342c3" class="cell" data-execution_count="15">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Now, let&#39;s investigate the &quot;income category&quot; field.</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co">## List the income categories and the number of countries in each</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co">## income category in descending order of most countries to least.</span></span>
@@ -11195,7 +5315,7 @@ Total Rows: 5, Total Columns: 2
 </section>
 <section id="task-12" class="level2">
 <h2 class="anchored" data-anchor-id="task-12">Task 12</h2>
-<div id="a32e8e64" class="cell" data-execution_count="16">
+<div id="88cce589" class="cell" data-execution_count="16">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Mystery task.  Looking at the table from Task 11 (anything odd?) write the</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="co">## next obvious query based on the results in the table.</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="co">## At a minimum, your query should put country short name in the first column.</span></span>
@@ -11203,7 +5323,7 @@ Total Rows: 5, Total Columns: 2
 <span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="co">## in the first column.</span></span>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="st">select `short name`, `long name`, region, `income group`</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="st">select `short name`, `long name`, `income group`</span></span>
 <span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a><span class="st">from sp25_ganeshr_user.wdi_country</span></span>
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="st">where `income group` is null</span></span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -11223,10 +5343,6 @@ long name
 </th>
 
 <th>
-region
-</th>
-
-<th>
 income group
 </th>
 
@@ -11247,18 +5363,14 @@ República Bolivariana de Venezuela
 </td>
 
 <td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
 NULL
 </td>
 
 </tr>
 
 <tr>
-<td colspan="4" style="text-align: left;">
-Total Rows: 1, Total Columns: 4
+<td colspan="3" style="text-align: left;">
+Total Rows: 1, Total Columns: 3
 </td>
 </tr>
 </tbody>
@@ -11269,7 +5381,7 @@ Total Rows: 1, Total Columns: 4
 </section>
 <section id="task-13" class="level2">
 <h2 class="anchored" data-anchor-id="task-13">Task 13</h2>
-<div id="eaa1273c" class="cell" data-execution_count="17">
+<div id="3426bccf" class="cell" data-execution_count="17">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co">## OK, this HAS to be an error. Let&#39;s make a assumption that the country </span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co">## in question, because they are oil-rich, are &quot;high income&quot;.  </span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co">## Write an update comment to correct the issue.</span></span>
@@ -11283,11 +5395,11 @@ Total Rows: 1, Total Columns: 4
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="st">commit;</span></span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="1745d68e" class="cell" data-execution_count="18">
+<div id="1e0c064e" class="cell" data-execution_count="18">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Now, display the country again to verify the change stuck!</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="st">select `short name`, `long name`, region, `income group`</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="st">select `short name`, `long name`,`income group`</span></span>
 <span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="st">from sp25_ganeshr_user.wdi_country</span></span>
 <span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="st">where `country code` = &quot;VEN&quot;</span></span>
 <span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -11307,10 +5419,6 @@ long name
 </th>
 
 <th>
-region
-</th>
-
-<th>
 income group
 </th>
 
@@ -11331,18 +5439,14 @@ República Bolivariana de Venezuela
 </td>
 
 <td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
 High income
 </td>
 
 </tr>
 
 <tr>
-<td colspan="4" style="text-align: left;">
-Total Rows: 1, Total Columns: 4
+<td colspan="3" style="text-align: left;">
+Total Rows: 1, Total Columns: 3
 </td>
 </tr>
 </tbody>
@@ -11353,7 +5457,7 @@ Total Rows: 1, Total Columns: 4
 </section>
 <section id="task-14" class="level2">
 <h2 class="anchored" data-anchor-id="task-14">Task 14</h2>
-<div id="151c8f78" class="cell" data-execution_count="19">
+<div id="b2f807eb" class="cell" data-execution_count="19">
 <div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Write a single query that show the number of countries in each </span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co">## &quot;Region&quot;-&quot;Income Group&quot; pair.  The table should have 3 columns:</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co">## region, income group, and no.of.countries.</span></span>
@@ -11755,7 +5859,7 @@ Total Rows: 22, Total Columns: 3
 </section>
 <section id="task-15" class="level2">
 <h2 class="anchored" data-anchor-id="task-15">Task 15</h2>
-<div id="ca7a4247" class="cell" data-execution_count="20">
+<div id="a08421d0" class="cell" data-execution_count="20">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Examine the result from task 14. It would be really cool to</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="co">## present the results of this table in a 2-D form, with </span></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">## columns for each income category (high, upper middle, lower middle, low, other)</span></span>
@@ -11775,10 +5879,11 @@ Total Rows: 22, Total Columns: 3
 <span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="st">    sum(case when `income group` = &#39;upper middle income&#39; then 1 else 0 end) as &quot;Upper middle income&quot;,</span></span>
 <span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a><span class="st">    sum(case when `income group` = &#39;lower middle income&#39; then 1 else 0 end) as &quot;Lower middle income&quot;,</span></span>
 <span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="st">    sum(case when `income group` = &#39;low income&#39; then 1 else 0 end) as &quot;low income&quot;</span></span>
-<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="st">from sp25_ganeshr_user.wdi_country</span></span>
-<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="st">group by region</span></span>
-<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="st">order by region;</span></span>
-<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="st">    count(*) as &quot;Total Countries&quot;</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="st">from sp25_ganeshr_user.wdi_country</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="st">group by region</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="st">order by region;</span></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="20">
 <table class="dataframe table table-sm table-striped small">
 
@@ -11787,23 +5892,11 @@ Total Rows: 22, Total Columns: 3
 <tr>
 
 <th>
-region
+ErrorType
 </th>
 
 <th>
-High income
-</th>
-
-<th>
-Upper middle income
-</th>
-
-<th>
-Lower middle income
-</th>
-
-<th>
-low income
+ErrorMessage
 </th>
 
 </tr>
@@ -11815,174 +5908,18 @@ low income
 <tr>
 
 <td>
-East Asia &amp; Pacific
+ProgrammingError
 </td>
 
 <td>
-15.0
-</td>
-
-<td>
-9.0
-</td>
-
-<td>
-12.0
-</td>
-
-<td>
-1.0
+Programming Error: (pymysql.err.ProgrammingError) (1064, &#39;You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \&#39;count(*) as “Total Countries”\nfrom sp25_ganeshr_user.wdi_country\ngroup by region\&#39; at line 7&#39;)\n[SQL: \nselect \n region,\n sum(case when <code>income group</code> = &#39;high income&#39; then 1 else 0 end) as “High income”,\n sum(case when <code>income group</code> = &#39;upper middle income&#39; then 1 else 0 end) as “Upper middle income”,\n sum(case when <code>income group</code> = &#39;lower middle income&#39; then 1 else 0 end) as “Lower middle income”,\n sum(case when <code>income group</code> = &#39;low income&#39; then 1 else 0 end) as “low income”\n count(*) as “Total Countries”\nfrom sp25_ganeshr_user.wdi_country\ngroup by region\norder by region;\n]\n(Background on this error at: https://sqlalche.me/e/20/f405)
 </td>
 
 </tr>
 
 <tr>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-40.0
-</td>
-
-<td>
-15.0
-</td>
-
-<td>
-3.0
-</td>
-
-<td>
-0.0
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-19.0
-</td>
-
-<td>
-19.0
-</td>
-
-<td>
-4.0
-</td>
-
-<td>
-0.0
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-8.0
-</td>
-
-<td>
-4.0
-</td>
-
-<td>
-7.0
-</td>
-
-<td>
-2.0
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-North America
-</td>
-
-<td>
-3.0
-</td>
-
-<td>
-0.0
-</td>
-
-<td>
-0.0
-</td>
-
-<td>
-0.0
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-South Asia
-</td>
-
-<td>
-0.0
-</td>
-
-<td>
-1.0
-</td>
-
-<td>
-6.0
-</td>
-
-<td>
-1.0
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-1.0
-</td>
-
-<td>
-6.0
-</td>
-
-<td>
-19.0
-</td>
-
-<td>
-22.0
-</td>
-
-</tr>
-
-<tr>
-<td colspan="5" style="text-align: left;">
-Total Rows: 7, Total Columns: 5
+<td colspan="2" style="text-align: left;">
+Total Rows: 1, Total Columns: 2
 </td>
 </tr>
 </tbody>
@@ -11993,7 +5930,7 @@ Total Rows: 7, Total Columns: 5
 </section>
 <section id="task-16" class="level2">
 <h2 class="anchored" data-anchor-id="task-16">Task 16</h2>
-<div id="c51b5d7c" class="cell" data-execution_count="21">
+<div id="edea2c94" class="cell" data-execution_count="21">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Wow! what a cool table!  It is very interesting to see where the money</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co">## sits around the world.  Using the general approach from Task 14 above</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co">## and write a query to return the single region with the most lower-income</span></span>
@@ -12007,7 +5944,7 @@ Total Rows: 7, Total Columns: 5
 <span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="st">select</span></span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="st">count(*) as &quot;Number of Countries&quot;, region</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a><span class="st">count(*) as &quot;Number of Countries&quot;, region, `income group`</span></span>
 <span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a><span class="st">from sp25_ganeshr_user.wdi_country</span></span>
 <span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="st">where `income group` = &quot;Low income&quot;</span></span>
 <span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a><span class="st">group by region</span></span>
@@ -12029,6 +5966,10 @@ Number of Countries
 region
 </th>
 
+<th>
+income group
+</th>
+
 </tr>
 
 </thead>
@@ -12045,11 +5986,15 @@ region
 Sub-Saharan Africa
 </td>
 
+<td>
+Low income
+</td>
+
 </tr>
 
 <tr>
-<td colspan="2" style="text-align: left;">
-Total Rows: 1, Total Columns: 2
+<td colspan="3" style="text-align: left;">
+Total Rows: 1, Total Columns: 3
 </td>
 </tr>
 </tbody>
@@ -12060,7 +6005,7 @@ Total Rows: 1, Total Columns: 2
 </section>
 <section id="task-17" class="level2">
 <h2 class="anchored" data-anchor-id="task-17">Task 17</h2>
-<div id="d4e487d4" class="cell" data-execution_count="22">
+<div id="8424bf85" class="cell" data-execution_count="22">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Are you getting the hand of this? Good! We need to take a look at all</span></span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="co">## the countries in the same region and with the same income category as</span></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co">## the Marshall Islands.</span></span>
@@ -12072,10 +6017,10 @@ Total Rows: 1, Total Columns: 2
 <span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
 <span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="st">select `country code`, `short name`, region, `income group`</span></span>
 <span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="st">from sp25_ganeshr_user.wdi_country</span></span>
-<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="st">where `income group` in (</span></span>
-<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="st">select `income group`</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="st">where (`income group`, region) in (</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="st">select `income group`, region</span></span>
 <span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="st">from wdi_country</span></span>
-<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="st">where `country code` = &quot;MHL&quot; </span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="st">where `country code` = &quot;MHL&quot;</span></span>
 <span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="st">)</span></span>
 <span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a><span class="st">order by `short name`</span></span>
 <span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -12111,206 +6056,6 @@ income group
 <tr>
 
 <td>
-ALB
-</td>
-
-<td>
-Albania
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-DZA
-</td>
-
-<td>
-Algeria
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ARG
-</td>
-
-<td>
-Argentina
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ARM
-</td>
-
-<td>
-Armenia
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-AZE
-</td>
-
-<td>
-Azerbaijan
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BLR
-</td>
-
-<td>
-Belarus
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BLZ
-</td>
-
-<td>
-Belize
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BIH
-</td>
-
-<td>
-Bosnia and Herzegovina
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BWA
-</td>
-
-<td>
-Botswana
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-BRA
-</td>
-
-<td>
-Brazil
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 CHN
 </td>
 
@@ -12320,166 +6065,6 @@ China
 
 <td>
 East Asia &amp; Pacific
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-COL
-</td>
-
-<td>
-Colombia
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CRI
-</td>
-
-<td>
-Costa Rica
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-CUB
-</td>
-
-<td>
-Cuba
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-DMA
-</td>
-
-<td>
-Dominica
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-DOM
-</td>
-
-<td>
-Dominican Republic
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ECU
-</td>
-
-<td>
-Ecuador
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SLV
-</td>
-
-<td>
-El Salvador
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GNQ
-</td>
-
-<td>
-Equatorial Guinea
-</td>
-
-<td>
-Sub-Saharan Africa
 </td>
 
 <td>
@@ -12511,86 +6096,6 @@ Upper middle income
 <tr>
 
 <td>
-GAB
-</td>
-
-<td>
-Gabon
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GEO
-</td>
-
-<td>
-Georgia
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GRD
-</td>
-
-<td>
-Grenada
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-GTM
-</td>
-
-<td>
-Guatemala
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 IDN
 </td>
 
@@ -12600,126 +6105,6 @@ Indonesia
 
 <td>
 East Asia &amp; Pacific
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IRN
-</td>
-
-<td>
-Iran
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-IRQ
-</td>
-
-<td>
-Iraq
-</td>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-JAM
-</td>
-
-<td>
-Jamaica
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-KAZ
-</td>
-
-<td>
-Kazakhstan
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-XKX
-</td>
-
-<td>
-Kosovo
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LBY
-</td>
-
-<td>
-Libya
-</td>
-
-<td>
-Middle East &amp; North Africa
 </td>
 
 <td>
@@ -12751,26 +6136,6 @@ Upper middle income
 <tr>
 
 <td>
-MDV
-</td>
-
-<td>
-Maldives
-</td>
-
-<td>
-South Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 MHL
 </td>
 
@@ -12791,66 +6156,6 @@ Upper middle income
 <tr>
 
 <td>
-MUS
-</td>
-
-<td>
-Mauritius
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MEX
-</td>
-
-<td>
-Mexico
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MDA
-</td>
-
-<td>
-Moldova
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 MNG
 </td>
 
@@ -12860,206 +6165,6 @@ Mongolia
 
 <td>
 East Asia &amp; Pacific
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MNE
-</td>
-
-<td>
-Montenegro
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-NAM
-</td>
-
-<td>
-Namibia
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-MKD
-</td>
-
-<td>
-North Macedonia
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PRY
-</td>
-
-<td>
-Paraguay
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-PER
-</td>
-
-<td>
-Peru
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SRB
-</td>
-
-<td>
-Serbia
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-ZAF
-</td>
-
-<td>
-South Africa
-</td>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-LCA
-</td>
-
-<td>
-St. Lucia
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-VCT
-</td>
-
-<td>
-St. Vincent and the Grenadines
-</td>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-SUR
-</td>
-
-<td>
-Suriname
-</td>
-
-<td>
-Latin America &amp; Caribbean
 </td>
 
 <td>
@@ -13111,46 +6216,6 @@ Upper middle income
 <tr>
 
 <td>
-TUR
-</td>
-
-<td>
-Türkiye
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-TKM
-</td>
-
-<td>
-Turkmenistan
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
-
-<td>
 TUV
 </td>
 
@@ -13169,28 +6234,8 @@ Upper middle income
 </tr>
 
 <tr>
-
-<td>
-UKR
-</td>
-
-<td>
-Ukraine
-</td>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-</tr>
-
-<tr>
 <td colspan="4" style="text-align: left;">
-Total Rows: 54, Total Columns: 4
+Total Rows: 9, Total Columns: 4
 </td>
 </tr>
 </tbody>
@@ -13201,7 +6246,7 @@ Total Rows: 54, Total Columns: 4
 </section>
 <section id="task-18" class="level2">
 <h2 class="anchored" data-anchor-id="task-18">Task 18</h2>
-<div id="4cdaba43" class="cell" data-execution_count="23">
+<div id="5b1f7f82" class="cell" data-execution_count="23">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">## OK - let&#39;s raise the heat in the kitchen! Review the output from task 14.</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co">## You&#39;ll see that some of the regions do not contain all of the income</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co">## levels.  For example, the Europe &amp; Central Asia region does not have</span></span>
@@ -13219,24 +6264,18 @@ Total Rows: 54, Total Columns: 4
 <span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co">## (skills: select, where, subqueries, joins)</span></span>
 <span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>run_sql_and_return_html(cnx,<span class="st">&quot;&quot;&quot;</span></span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="st">select region, `income group`,</span></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="st">       count(*) as &quot;Country Count&quot;,</span></span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="st">       (select count(region) </span></span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="st">        from wdi_country as reg </span></span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="st">        where reg.region = wdi_country.region) as &quot;Countries in Region&quot;,</span></span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="st">       (select count(`income group`) </span></span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="st">        from wdi_country as inc </span></span>
-<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="st">        where inc.`income group` = wdi_country.`income group`) as &quot;Countries in Income Group&quot;,</span></span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a><span class="st">       (select count(*) </span></span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="st">        from wdi_country) as &quot;Total Countries&quot;,</span></span>
-<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a><span class="st">       ((select count(`income group`) </span></span>
-<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a><span class="st">         from wdi_country as inc </span></span>
-<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a><span class="st">         where inc.`income group` = wdi_country.`income group`) /</span></span>
-<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a><span class="st">        (select count(*) </span></span>
-<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a><span class="st">         from wdi_country) * 100) as &quot;Percentage of Region&quot;</span></span>
-<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a><span class="st">from wdi_country</span></span>
-<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a><span class="st">group by region, `income group`;</span></span>
-<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a><span class="st">select region, `income group`</span></span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="st">from (</span></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="st">select distinct region from wdi_country) as regions</span></span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a><span class="st">cross join (</span></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a><span class="st">select distinct `income group` from wdi_country) as income_groups</span></span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="st">left join wdi_country as og</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="st">on </span></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="st">    regions.region = og.region </span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a><span class="st">    and income_groups.`income group` = og.`income group`</span></span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a><span class="st">where og.region is null</span></span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a><span class="st">order by regions.region, income_groups.`income group`;</span></span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="23">
 <table class="dataframe table table-sm table-striped small">
 
@@ -13245,31 +6284,11 @@ Total Rows: 54, Total Columns: 4
 <tr>
 
 <th>
-region
+ErrorType
 </th>
 
 <th>
-income group
-</th>
-
-<th>
-Country Count
-</th>
-
-<th>
-Countries in Region
-</th>
-
-<th>
-Countries in Income Group
-</th>
-
-<th>
-Total Countries
-</th>
-
-<th>
-Percentage of Region
+ErrorMessage
 </th>
 
 </tr>
@@ -13281,710 +6300,18 @@ Percentage of Region
 <tr>
 
 <td>
-Latin America &amp; Caribbean
+OperationalError
 </td>
 
 <td>
-High income
-</td>
-
-<td>
-19
-</td>
-
-<td>
-42
-</td>
-
-<td>
-86
-</td>
-
-<td>
-217
-</td>
-
-<td>
-39.6313
+Operational Error: (pymysql.err.OperationalError) (1052, “Column &#39;region&#39; in field list is ambiguous”)\n[SQL: \nselect region, <code>income group</code>\nfrom (\nselect distinct region from wdi_country) as regions\ncross join (\nselect distinct <code>income group</code> from wdi_country) as income_groups\nleft join wdi_country as og\non \n regions.region = og.region \n and income_groups.<code>income group</code> = og.<code>income group</code>\nwhere og.region is null\norder by regions.region, income_groups.<code>income group</code>;\n]\n(Background on this error at: https://sqlalche.me/e/20/e3q8)
 </td>
 
 </tr>
 
 <tr>
-
-<td>
-South Asia
-</td>
-
-<td>
-Low income
-</td>
-
-<td>
-1
-</td>
-
-<td>
-8
-</td>
-
-<td>
-26
-</td>
-
-<td>
-217
-</td>
-
-<td>
-11.9816
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-Lower middle income
-</td>
-
-<td>
-19
-</td>
-
-<td>
-48
-</td>
-
-<td>
-51
-</td>
-
-<td>
-217
-</td>
-
-<td>
-23.5023
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-15
-</td>
-
-<td>
-58
-</td>
-
-<td>
-54
-</td>
-
-<td>
-217
-</td>
-
-<td>
-24.8848
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-High income
-</td>
-
-<td>
-40
-</td>
-
-<td>
-58
-</td>
-
-<td>
-86
-</td>
-
-<td>
-217
-</td>
-
-<td>
-39.6313
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-High income
-</td>
-
-<td>
-8
-</td>
-
-<td>
-21
-</td>
-
-<td>
-86
-</td>
-
-<td>
-217
-</td>
-
-<td>
-39.6313
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-19
-</td>
-
-<td>
-42
-</td>
-
-<td>
-54
-</td>
-
-<td>
-217
-</td>
-
-<td>
-24.8848
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-<td>
-High income
-</td>
-
-<td>
-15
-</td>
-
-<td>
-37
-</td>
-
-<td>
-86
-</td>
-
-<td>
-217
-</td>
-
-<td>
-39.6313
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-Low income
-</td>
-
-<td>
-22
-</td>
-
-<td>
-48
-</td>
-
-<td>
-26
-</td>
-
-<td>
-217
-</td>
-
-<td>
-11.9816
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-South Asia
-</td>
-
-<td>
-Lower middle income
-</td>
-
-<td>
-6
-</td>
-
-<td>
-8
-</td>
-
-<td>
-51
-</td>
-
-<td>
-217
-</td>
-
-<td>
-23.5023
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-North America
-</td>
-
-<td>
-High income
-</td>
-
-<td>
-3
-</td>
-
-<td>
-3
-</td>
-
-<td>
-86
-</td>
-
-<td>
-217
-</td>
-
-<td>
-39.6313
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-Lower middle income
-</td>
-
-<td>
-4
-</td>
-
-<td>
-42
-</td>
-
-<td>
-51
-</td>
-
-<td>
-217
-</td>
-
-<td>
-23.5023
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-6
-</td>
-
-<td>
-48
-</td>
-
-<td>
-54
-</td>
-
-<td>
-217
-</td>
-
-<td>
-24.8848
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-9
-</td>
-
-<td>
-37
-</td>
-
-<td>
-54
-</td>
-
-<td>
-217
-</td>
-
-<td>
-24.8848
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-Lower middle income
-</td>
-
-<td>
-7
-</td>
-
-<td>
-21
-</td>
-
-<td>
-51
-</td>
-
-<td>
-217
-</td>
-
-<td>
-23.5023
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-4
-</td>
-
-<td>
-21
-</td>
-
-<td>
-54
-</td>
-
-<td>
-217
-</td>
-
-<td>
-24.8848
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-<td>
-Lower middle income
-</td>
-
-<td>
-12
-</td>
-
-<td>
-37
-</td>
-
-<td>
-51
-</td>
-
-<td>
-217
-</td>
-
-<td>
-23.5023
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-Lower middle income
-</td>
-
-<td>
-3
-</td>
-
-<td>
-58
-</td>
-
-<td>
-51
-</td>
-
-<td>
-217
-</td>
-
-<td>
-23.5023
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-South Asia
-</td>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-1
-</td>
-
-<td>
-8
-</td>
-
-<td>
-54
-</td>
-
-<td>
-217
-</td>
-
-<td>
-24.8848
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-East Asia &amp; Pacific
-</td>
-
-<td>
-Low income
-</td>
-
-<td>
-1
-</td>
-
-<td>
-37
-</td>
-
-<td>
-26
-</td>
-
-<td>
-217
-</td>
-
-<td>
-11.9816
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-High income
-</td>
-
-<td>
-1
-</td>
-
-<td>
-48
-</td>
-
-<td>
-86
-</td>
-
-<td>
-217
-</td>
-
-<td>
-39.6313
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-Low income
-</td>
-
-<td>
-2
-</td>
-
-<td>
-21
-</td>
-
-<td>
-26
-</td>
-
-<td>
-217
-</td>
-
-<td>
-11.9816
-</td>
-
-</tr>
-
-<tr>
-<td colspan="7" style="text-align: left;">
-Total Rows: 22, Total Columns: 7
+<td colspan="2" style="text-align: left;">
+Total Rows: 1, Total Columns: 2
 </td>
 </tr>
 </tbody>
@@ -13995,7 +6322,7 @@ Total Rows: 22, Total Columns: 7
 </section>
 <section id="task-19" class="level2">
 <h2 class="anchored" data-anchor-id="task-19">Task 19</h2>
-<div id="48561efe" class="cell" data-execution_count="24">
+<div id="3b51512a" class="cell" data-execution_count="24">
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Hot enough, yet?  Let&#39;s go for ghost-pepper HOT!  Now let&#39;s build some</span></span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="co">## percentage tables.  For example, across the entire sample, what</span></span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="co">## is the percentage of total countries in each income category?</span></span>
@@ -14789,7 +7116,7 @@ Total Rows: 22, Total Columns: 7
 </section>
 <section id="task-20" class="level2">
 <h2 class="anchored" data-anchor-id="task-20">Task 20</h2>
-<div id="a81e9f33" class="cell" data-execution_count="25">
+<div id="31346c02" class="cell" data-execution_count="25">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co">## SLAM DUNK TIME!  Using the resulting table CTEs from Task 19,</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co">## print table similar to the table in Task 15, with Income group in the</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co">## columns, Region in the rows and Percent of total in each cell of the table.</span></span>
@@ -14801,11 +7128,12 @@ Total Rows: 22, Total Columns: 7
 <span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a><span class="st">    (sum(case when `income group` = &#39;upper middle income&#39; then 1 else 0 end) / count(*)) * 100 as &quot;Upper middle income&quot;,</span></span>
 <span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a><span class="st">    (sum(case when `income group` = &#39;lower middle income&#39; then 1 else 0 end) / count(*)) * 100 as &quot;Lower middle income&quot;,</span></span>
 <span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a><span class="st">    (sum(case when `income group` = &#39;low income&#39; then 1 else 0 end) / count(*)) * 100 as &quot;Low income&quot;</span></span>
-<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="st">from sp25_ganeshr_user.wdi_country</span></span>
-<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="st">group by region</span></span>
-<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="st">order by region;</span></span>
-<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="st">    count(*) as &quot;Total Countries&quot;</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a><span class="st">from sp25_ganeshr_user.wdi_country</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a><span class="st">group by region</span></span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a><span class="st">order by region;</span></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display" data-execution_count="25">
 <table class="dataframe table table-sm table-striped small">
 
@@ -14814,23 +7142,11 @@ Total Rows: 22, Total Columns: 7
 <tr>
 
 <th>
-region
+ErrorType
 </th>
 
 <th>
-High income
-</th>
-
-<th>
-Upper middle income
-</th>
-
-<th>
-Lower middle income
-</th>
-
-<th>
-Low income
+ErrorMessage
 </th>
 
 </tr>
@@ -14842,174 +7158,18 @@ Low income
 <tr>
 
 <td>
-East Asia &amp; Pacific
+ProgrammingError
 </td>
 
 <td>
-40.5405
-</td>
-
-<td>
-24.3243
-</td>
-
-<td>
-32.4324
-</td>
-
-<td>
-2.7027
+Programming Error: (pymysql.err.ProgrammingError) (1064, &#39;You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \&#39;count(*) as “Total Countries”\nfrom sp25_ganeshr_user.wdi_country\ngroup by region\&#39; at line 7&#39;)\n[SQL: \nselect \n region,\n (sum(case when <code>income group</code> = &#39;high income&#39; then 1 else 0 end) / count(<em>)) </em> 100 as “High income”,\n (sum(case when <code>income group</code> = &#39;upper middle income&#39; then 1 else 0 end) / count(<em>)) </em> 100 as “Upper middle income”,\n (sum(case when <code>income group</code> = &#39;lower middle income&#39; then 1 else 0 end) / count(<em>)) </em> 100 as “Lower middle income”,\n (sum(case when <code>income group</code> = &#39;low income&#39; then 1 else 0 end) / count(<em>)) </em> 100 as “Low income”\n count(*) as “Total Countries”\nfrom sp25_ganeshr_user.wdi_country\ngroup by region\norder by region;\n\n]\n(Background on this error at: https://sqlalche.me/e/20/f405)
 </td>
 
 </tr>
 
 <tr>
-
-<td>
-Europe &amp; Central Asia
-</td>
-
-<td>
-68.9655
-</td>
-
-<td>
-25.8621
-</td>
-
-<td>
-5.1724
-</td>
-
-<td>
-0.0000
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Latin America &amp; Caribbean
-</td>
-
-<td>
-45.2381
-</td>
-
-<td>
-45.2381
-</td>
-
-<td>
-9.5238
-</td>
-
-<td>
-0.0000
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Middle East &amp; North Africa
-</td>
-
-<td>
-38.0952
-</td>
-
-<td>
-19.0476
-</td>
-
-<td>
-33.3333
-</td>
-
-<td>
-9.5238
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-North America
-</td>
-
-<td>
-100.0000
-</td>
-
-<td>
-0.0000
-</td>
-
-<td>
-0.0000
-</td>
-
-<td>
-0.0000
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-South Asia
-</td>
-
-<td>
-0.0000
-</td>
-
-<td>
-12.5000
-</td>
-
-<td>
-75.0000
-</td>
-
-<td>
-12.5000
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Sub-Saharan Africa
-</td>
-
-<td>
-2.0833
-</td>
-
-<td>
-12.5000
-</td>
-
-<td>
-39.5833
-</td>
-
-<td>
-45.8333
-</td>
-
-</tr>
-
-<tr>
-<td colspan="5" style="text-align: left;">
-Total Rows: 7, Total Columns: 5
+<td colspan="2" style="text-align: left;">
+Total Rows: 1, Total Columns: 2
 </td>
 </tr>
 </tbody>
@@ -15020,7 +7180,7 @@ Total Rows: 7, Total Columns: 5
 </section>
 <section id="task-21" class="level2">
 <h2 class="anchored" data-anchor-id="task-21">Task 21</h2>
-<div id="5b9bdf2c" class="cell" data-execution_count="26">
+<div id="28c5b3cf" class="cell" data-execution_count="26">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co">## ANOTHER DUNK!  Using the resulting table CTEs from Task 19,</span></span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="co">## print a table listing the number, totals and percentage of countries</span></span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="co">## by income category.</span></span>
@@ -15035,11 +7195,11 @@ Total Rows: 7, Total Columns: 5
 <span id="cb26-12"><a href="#cb26-12" aria-hidden="true" tabindex="-1"></a><span class="st">     where inc.`income group` = wdi_country.`income group`) as &quot;Countries in Income Group&quot;, </span></span>
 <span id="cb26-13"><a href="#cb26-13" aria-hidden="true" tabindex="-1"></a><span class="st">    (select count(*) </span></span>
 <span id="cb26-14"><a href="#cb26-14" aria-hidden="true" tabindex="-1"></a><span class="st">     from wdi_country) as &quot;Total Countries&quot;, </span></span>
-<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="st">    ((select count(*) </span></span>
+<span id="cb26-15"><a href="#cb26-15" aria-hidden="true" tabindex="-1"></a><span class="st">    select round(((select count(*) </span></span>
 <span id="cb26-16"><a href="#cb26-16" aria-hidden="true" tabindex="-1"></a><span class="st">      from wdi_country as inc </span></span>
 <span id="cb26-17"><a href="#cb26-17" aria-hidden="true" tabindex="-1"></a><span class="st">      where inc.`income group` = wdi_country.`income group`) </span></span>
-<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="st">      / (select count(*) </span></span>
-<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="st">         from wdi_country) * 100) as &quot;Percent of Total&quot;</span></span>
+<span id="cb26-18"><a href="#cb26-18" aria-hidden="true" tabindex="-1"></a><span class="st">      / (select count(*)</span></span>
+<span id="cb26-19"><a href="#cb26-19" aria-hidden="true" tabindex="-1"></a><span class="st">         from wdi_country) * 100), 1) as &quot;Percent of Total&quot;</span></span>
 <span id="cb26-20"><a href="#cb26-20" aria-hidden="true" tabindex="-1"></a><span class="st">from wdi_country</span></span>
 <span id="cb26-21"><a href="#cb26-21" aria-hidden="true" tabindex="-1"></a><span class="st">group by `income group`;</span></span>
 <span id="cb26-22"><a href="#cb26-22" aria-hidden="true" tabindex="-1"></a><span class="st">&quot;&quot;&quot;</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -15051,19 +7211,11 @@ Total Rows: 7, Total Columns: 5
 <tr>
 
 <th>
-income group
+ErrorType
 </th>
 
 <th>
-Countries in Income Group
-</th>
-
-<th>
-Total Countries
-</th>
-
-<th>
-Percent of Total
+ErrorMessage
 </th>
 
 </tr>
@@ -15075,86 +7227,18 @@ Percent of Total
 <tr>
 
 <td>
-High income
+ProgrammingError
 </td>
 
 <td>
-86
-</td>
-
-<td>
-217
-</td>
-
-<td>
-39.6313
+Programming Error: (pymysql.err.ProgrammingError) (1064, “You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;select round(((select count(*) \n from wdi_country as inc \n where inc.<code>\&#39; at line 8&quot;)\\n[SQL: \\nselect \\n</code>income group<code>, \\n    (select count(*) \\n     from wdi_country as inc \\n     where inc.</code>income group<code>= wdi_country.</code>income group<code>) as &quot;Countries in Income Group&quot;, \\n    (select count(*) \\n     from wdi_country) as &quot;Total Countries&quot;, \\n    select round(((select count(*) \\n      from wdi_country as inc \\n      where inc.</code>income group<code>= wdi_country.</code>income group<code>) \\n      / (select count(*)\\n         from wdi_country) * 100), 1) as &quot;Percent of Total&quot;\\nfrom wdi_country\\ngroup by</code>income group`;\n]\n(Background on this error at: https://sqlalche.me/e/20/f405)
 </td>
 
 </tr>
 
 <tr>
-
-<td>
-Low income
-</td>
-
-<td>
-26
-</td>
-
-<td>
-217
-</td>
-
-<td>
-11.9816
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Lower middle income
-</td>
-
-<td>
-51
-</td>
-
-<td>
-217
-</td>
-
-<td>
-23.5023
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-Upper middle income
-</td>
-
-<td>
-54
-</td>
-
-<td>
-217
-</td>
-
-<td>
-24.8848
-</td>
-
-</tr>
-
-<tr>
-<td colspan="4" style="text-align: left;">
-Total Rows: 4, Total Columns: 4
+<td colspan="2" style="text-align: left;">
+Total Rows: 1, Total Columns: 2
 </td>
 </tr>
 </tbody>

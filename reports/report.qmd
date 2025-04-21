@@ -91,7 +91,7 @@ List all non-countries.
 ## (skills: select, where)
 
 run_sql_and_return_html(cnx,"""
-select *
+select `long name`
 from world_bank_data.wdi_country
 where Region is null
 """)
@@ -257,7 +257,7 @@ order by "Number of Countries" desc
 ## in the first column.
 
 run_sql_and_return_html(cnx,"""
-select `short name`, `long name`, region, `income group`
+select `short name`, `long name`, `income group`
 from sp25_ganeshr_user.wdi_country
 where `income group` is null
 """)
@@ -284,7 +284,7 @@ commit;
 ## Now, display the country again to verify the change stuck!
 
 run_sql_and_return_html(cnx,"""
-select `short name`, `long name`, region, `income group`
+select `short name`, `long name`,`income group`
 from sp25_ganeshr_user.wdi_country
 where `country code` = "VEN"
 """)
@@ -329,7 +329,8 @@ select
     sum(case when `income group` = 'high income' then 1 else 0 end) as "High income",
     sum(case when `income group` = 'upper middle income' then 1 else 0 end) as "Upper middle income",
     sum(case when `income group` = 'lower middle income' then 1 else 0 end) as "Lower middle income",
-    sum(case when `income group` = 'low income' then 1 else 0 end) as "low income"
+    sum(case when `income group` = 'low income' then 1 else 0 end) as "low income",
+    count(*) as "Total Countries"
 from sp25_ganeshr_user.wdi_country
 group by region
 order by region;
@@ -353,7 +354,7 @@ order by region;
 
 run_sql_and_return_html(cnx,"""
 select
-count(*) as "Number of Countries", region
+count(*) as "Number of Countries", region, `income group`
 from sp25_ganeshr_user.wdi_country
 where `income group` = "Low income"
 group by region
@@ -377,10 +378,10 @@ limit 1;
 run_sql_and_return_html(cnx,"""
 select `country code`, `short name`, region, `income group`
 from sp25_ganeshr_user.wdi_country
-where `income group` in (
-select `income group`
+where (`income group`, region) in (
+select `income group`, region
 from wdi_country
-where `country code` = "MHL" 
+where `country code` = "MHL"
 )
 order by `short name`
 """)
@@ -407,23 +408,15 @@ order by `short name`
 ## (skills: select, where, subqueries, joins)
 
 run_sql_and_return_html(cnx,"""
-select region, `income group`,
-       count(*) as "Country Count",
-       (select count(region) 
-        from wdi_country as reg 
-        where reg.region = wdi_country.region) as "Countries in Region",
-       (select count(`income group`) 
-        from wdi_country as inc 
-        where inc.`income group` = wdi_country.`income group`) as "Countries in Income Group",
-       (select count(*) 
-        from wdi_country) as "Total Countries",
-       ((select count(`income group`) 
-         from wdi_country as inc 
-         where inc.`income group` = wdi_country.`income group`) /
-        (select count(*) 
-         from wdi_country) * 100) as "Percentage of Region"
-from wdi_country
-group by region, `income group`;
+select regions.region, income_groups.`income group`
+from (select distinct region from wdi_country) as regions
+cross join (select distinct `income group` from wdi_country) as income_groups
+left join wdi_country as og
+on 
+  regions.region = og.region 
+  and income_groups.`income group` = og.`income group`
+where og.region is null
+order by regions.region, income_groups.`income group`;
 """)
 
 ```
@@ -481,7 +474,8 @@ select
     (sum(case when `income group` = 'high income' then 1 else 0 end) / count(*)) * 100 as "High income",
     (sum(case when `income group` = 'upper middle income' then 1 else 0 end) / count(*)) * 100 as "Upper middle income",
     (sum(case when `income group` = 'lower middle income' then 1 else 0 end) / count(*)) * 100 as "Lower middle income",
-    (sum(case when `income group` = 'low income' then 1 else 0 end) / count(*)) * 100 as "Low income"
+    (sum(case when `income group` = 'low income' then 1 else 0 end) / count(*)) * 100 as "Low income",
+    count(*) as "Total Countries"
 from sp25_ganeshr_user.wdi_country
 group by region
 order by region;
@@ -503,15 +497,15 @@ run_sql_and_return_html(cnx,"""
 select 
     `income group`, 
     (select count(*) 
-     from wdi_country as inc 
-     where inc.`income group` = wdi_country.`income group`) as "Countries in Income Group", 
+    from wdi_country as inc 
+    where inc.`income group` = wdi_country.`income group`) as "Countries in Income Group", 
     (select count(*) 
-     from wdi_country) as "Total Countries", 
-    ((select count(*) 
+    from wdi_country) as "Total Countries", 
+    round(((select count(*) 
       from wdi_country as inc 
       where inc.`income group` = wdi_country.`income group`) 
-      / (select count(*) 
-         from wdi_country) * 100) as "Percent of Total"
+      / (select count(*)
+         from wdi_country) * 100), 1) as "Percent of Total"
 from wdi_country
 group by `income group`;
 """)
