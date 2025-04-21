@@ -408,7 +408,7 @@ order by `short name`
 ## (skills: select, where, subqueries, joins)
 
 run_sql_and_return_html(cnx,"""
-select regions.region, income_groups.`income group`
+select regions.region, income_groups.`income group`, 0 as "Countries in Region"
 from (select distinct region from wdi_country) as regions
 cross join (select distinct `income group` from wdi_country) as income_groups
 left join wdi_country as og
@@ -452,10 +452,9 @@ select
      where inc.`income group` = wdi_country.`income group`) as "Countries in Income Group", 
     (select count(*) 
      from wdi_country) as "Total Countries", 
-    (count(*) * 100.0 / 
-     (select count(*) 
-      from wdi_country as reg 
-      where reg.region = wdi_country.region)) as "Percent of Region-Income Group" 
+    round (count(*) * 100.0 / 
+    (select count(*) 
+    from wdi_country as tot), 1) as "Percent of Region-Income Group" 
 from wdi_country
 group by region, `income group`;
 """)
